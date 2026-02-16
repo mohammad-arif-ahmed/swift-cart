@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>SwiftCart</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -25,18 +27,41 @@
 
     <style>
         .category-btn.active {
-            background:#4F46E5;
-            color:white;
-            border-color:#4F46E5;
+            background: #4F46E5;
+            color: white;
+            border-color: #4F46E5;
         }
 
         .card-title:hover {
-            height:auto;
+            height: auto;
         }
     </style>
 </head>
+<body class="font-sans text-gray-800">
+    <nav class="navbar bg-white border-b px-4 md:px-16 sticky top-0 z-50">
+        <div class="navbar-start">
+            <a class="text-2xl font-display font-bold text-primary">SwiftCart</a>
+        </div>
 
-<body>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 font-medium">
+                <li><a href="#" class="text-primary">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-end">
+            <div class="indicator">
+                <span id="cart-count" class="indicator-item badge badge-primary text-xs">0</span>
+                <button class="btn btn-ghost btn-circle">
+                    🛒
+                </button>
+            </div>
+        </div>
+    </nav>
 
 </body>
+
 </html>
