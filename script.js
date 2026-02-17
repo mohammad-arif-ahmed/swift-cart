@@ -97,3 +97,49 @@ const loadProducts = async (category, btn) => {
     });
 };
 
+const showDetails = async (id) => {
+
+    const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+    const data = await res.json();
+
+    const modalBody = document.getElementById('modal-body');
+
+    modalBody.innerHTML = `
+        <div class="flex flex-col md:flex-row gap-8">
+
+            <img src="${data.image}"
+                class="w-full md:w-1/3 object-contain h-64"/>
+
+            <div class="flex-1 text-left">
+                <h3 class="text-2xl font-bold mb-2">${data.title}</h3>
+
+                <p class="text-gray-500 mb-4">${data.description}</p>
+
+                <p class="text-3xl font-bold text-primary mb-6">
+                    $${data.price}
+                </p>
+
+                <div class="flex gap-4">
+                    <button class="btn btn-primary flex-1">
+                        Buy Now
+                    </button>
+
+                    <label for="details_modal"
+                        class="btn btn-outline">Close</label>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById('details_modal').checked = true;
+};
+
+const addToCart = () => {
+
+    cartCount++;
+
+    document.getElementById('cart-count').innerText = cartCount;
+};
+
+loadCategories();   
+loadProducts('all'); 
